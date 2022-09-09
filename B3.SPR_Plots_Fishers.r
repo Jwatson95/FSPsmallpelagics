@@ -15,6 +15,16 @@ packages <- c("ggplot2","data.table","xlsx","openxlsx","dplyr","readxl","stringr
               "maps","mapdata","mapproj","mapplots","lubridate","rgdal","raster","GISTools","ggspatial","XLConnect",
               "openxlsx","sjmisc","viridis")
 
+lib <- function(packages){ 
+  installed_packages <- packages %in% rownames(installed.packages())
+  if (any(installed_packages == FALSE)) {
+    install.packages(packages[!installed_packages])
+  }
+  # Packages loading
+  invisible(lapply(packages, library, character.only = TRUE))
+  
+}
+
 lib(packages) #install packages through own function
 
 
