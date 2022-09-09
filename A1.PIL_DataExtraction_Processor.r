@@ -892,7 +892,6 @@ all <- all[,c("date","vessel","totalcatch_kg","length_cm","weight_g","samplewt_g
 write.csv(all,file=paste(out_dir,"/PIL_processors_2022.csv",sep=""),row.names=F)
 #write.csv(all3,file=paste(out_dir,"/PIL_processorsLW_2021.csv",sep=""),row.names=F)
 
-
 ###########################################################################################################################--
 
 #next script: A2.PIL_Plots_Processors #-----
