@@ -1,4 +1,4 @@
-#Plotting data for PIL from processors FSP 2020-2021
+#Plotting data for PIL from processors FSP
 #@silvia Rodriguez Climent
 # 17-02-2021; last modified 09/09/2022
 #---------------------------------------------------------------------## 
