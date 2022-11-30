@@ -267,7 +267,7 @@ plotmeans(length_cm ~ processor, data = proc, frame = FALSE,
           main="Mean Plot with 95% CI") 
 
 # Compute the analysis of variance
-res.aov <- aov(length_cm ~ processor, data = proc)
+res.aov <- aov(length_cm ~ processor, data = proc)  ##issues due to only one processers data availible 
 # Summary of the analysis
 summary(res.aov) #significant differences
 capture_a <- summary(res.aov)

@@ -17,7 +17,7 @@ packages <- c("ggplot2","data.table","xlsx","openxlsx","dplyr","readxl","stringr
 
 lib(packages) #install packages through own function
 
-
+#install.packages("vctrs")
 #get all the final plots from all the processors
 list.files(out_dir, pattern="PIL*")
 
@@ -59,7 +59,7 @@ db$sel <- db$processor
 
 plot1.TL1 <- list()
 plot1.TL2 <- list()
-#plot1.TL3 <- list()
+plot1.TL3 <- list()
 
 for(i in 1:length(var)){
   
@@ -224,7 +224,9 @@ print(SP_LWrel[[3]])
 
 head(pilproc)
 
-db2 <- subset(pilproc,processor=="Interfish")
+
+db2 <- subset(pilproc,processor=="INTERFISH")
+
 summary(db2)
 
 db <- db2
@@ -297,9 +299,9 @@ for(i in 1:length(var)){
 }
 
 
-
 ggarrange(SP_LWrel[[1]],SP_LWrel[[2]],SP_LWrel[[3]],SP_LWrel[[4]],SP_LWrel[[5]],
           SP_LWrel[[6]],nrow=2,ncol=3)
+
 
 
 
@@ -450,7 +452,7 @@ summary(pilproc$length_cm)
 #explore the data visually
 
 ## a) length----
-#library("ggpubr")
+library("ggpubr")
 ggboxplot(pilproc, x = "processor", y = "length_cm", 
           color = "processor", palette = c("#00AFBB", "#E7B800", "#FC4E07"),
           order = c("OCEANFISH", "FALFISH", "INTERFISH"),
@@ -468,7 +470,8 @@ boxplot(length_cm ~ processor, data = pilproc,
         frame = FALSE, col = c("#00AFBB", "#E7B800", "#FC4E07"))
 boxplot(pilproc$length_cm~pilproc$processor)
 
-#library("gplots")
+#install.packages("gplots")
+library("gplots")
 plotmeans(length_cm ~ processor, data = pilproc, frame = FALSE,
           xlab = "length", ylab = "processor",
           main="Mean Plot with 95% CI") 
@@ -763,3 +766,4 @@ ggsave(filename = paste(plot_dir,paste("Interfish_fatcontent.png",sep="_"),sep="
        plot = all.TL1, width = 25,height = 20, units = "cm", dpi = 300, type = "cairo-png") 
 
 ###################################### END #############################################################################
+

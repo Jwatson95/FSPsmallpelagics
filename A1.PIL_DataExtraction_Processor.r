@@ -2,6 +2,10 @@
 #@silvia Rodriguez Climent
 # 01-09-2020; last modified 09-09-2022
 #---------------------------------------------------------------------##
+##check
+#C:/Users/JW30/OneDrive - CEFAS/Documents/Data
+#setwd("C:/Users/JW30/OneDrive - CEFAS/Documents")
+setwd("C:/Users/JW30/OneDrive - CEFAS/Documents/MD007B_2122/Working_area")
 
 # ===================================================--
 # 0. Set directories----
@@ -29,6 +33,8 @@ lib <- function(packages){
 }
 
 lib(packages) #install libraries through own function
+
+install.packages("GISTools") ##might need newer version 
 
 # ===================================================--
 # 1. PIL INTERFISH----
@@ -188,7 +194,7 @@ a <- ggplot(pil, aes(x=as.numeric(TLcm))) +
 str(pil$date)
 str(pil)
 pil$weight.g <- as.numeric(pil$weight.g)
-pil$TLcm <- as.numeric(pil$length.cm)
+pil$TLcm <- as.numeric(pil$TLcm)
 
 ggplot(pil,aes(x=TLcm,y=weight.g))+geom_jitter(aes(color=as.factor(month(pil$date))))+theme(legend.position="bottom")
 ggplot(pil,aes(x=TLcm,y=weight.g))+geom_jitter(aes(color=vessel))+theme(legend.position="bottom")
@@ -219,7 +225,6 @@ pil$fishingseason <- "2021-2022"
 
 pilfat <- pil[,c("date","vessel","bins","catchlanded.kg","intake","TLcm","weight.g","Wsample_g","fat","month","year","source","fishingseason","species","division")]
 pil <- pil[,c("date","vessel","bins","catchlanded.kg","intake","TLcm","weight.g","Wsample_g","month","year","source","fishingseason","species","division")]
-
 
 #save the aggregated data and ready to start the analysis
 write.csv(pil, file=paste(out_dir,"PIL_Interfish_untilnov.csv",sep="/"),quote=F,row.names = F)
@@ -382,7 +387,7 @@ for(i in 1:length(myfiles)){
   {mydata[[myfiles[i]]] <- xlsx::read.xlsx(paste(inp_dir_ocean,myfiles[i], sep="/"), sheetName=temp[1],header=T,stringsAsFactors = FALSE)
     #mydata[[i]]$Date <- strftime(strptime(mydata[[i]]$Date,"%Y/%m/%d"))}# as.is avoids data to be converted to factors
   }}
-
+##changed
 #do the same with the function, not working properly
 #readfiles(inp_dir_ocean,myfiles)
 

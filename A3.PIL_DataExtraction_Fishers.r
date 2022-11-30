@@ -29,7 +29,9 @@ lib(packages)
 #inp_dir <- file.path(getwd(), "Data/Fishers/")
 #try with the 2021 data for the moment
 
-inp_dir <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP2122/Data/Fishers/"
+#inp_dir <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP2122/Data/Fishers/"  ##unsure whar=t this is?
+inp_dir <- "C:/Users/JW30/OneDrive - CEFAS/Documents/FSP_MF083_2021/Working_area/Data/Fishers" 
+
 out_dir <- file.path(getwd(), "Data/Output/")
 list.files(inp_dir)
 

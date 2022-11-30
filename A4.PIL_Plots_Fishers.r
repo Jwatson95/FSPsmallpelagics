@@ -29,7 +29,7 @@ species <- "PIL"
 
 # File produced in script: A3. PIL_DataExtraction_Fishers #
 
-pilfish <- read.table(paste(out_dir,"/PIL_LBfishers_2122(3).csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F)
+pilfish <- read.table(paste(out_dir,"/PIL_LBfishers_2122(2).csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F)
 head(pilfish);dim(pilfish) # 472 25
 
 piltl <- read.table(paste(out_dir,"/PIL_TLfishers_2122.csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F)
@@ -341,7 +341,7 @@ bycacth3
 # ===================================================--
 
 # Load europe coastline
-wmap <- raster::shapefile("C:/Users/SRC01/OneDrive - CEFAS/01. PELTIC/Maps Peltic/Europe//EuropeESRI_high.shp")
+wmap <- raster::shapefile("C:/Users/SRC01/OneDrive - CEFAS/01. PELTIC/Maps Peltic/Europe//EuropeESRI_high.shp") ###dont have this???
 #mybox <- matrix(c(-6,50,0,51.5), nrow = 2, ncol = 2, dimnames = list(c("x","y"), c("min","max")))#whole cornish peninsula
 mybox <- matrix(c(-6,50,-1,51.5), nrow = 2, ncol = 2, dimnames = list(c("x","y"), c("min","max")))#little zoom cornish peninsula
 #mybox <- matrix(c(-4.0,49.75,-2.0,51.0), nrow = 2, ncol = 2, dimnames = list(c("x","y"), c("min","max"))) #Lyme bay
@@ -545,7 +545,7 @@ MapHaul4.1
 # ===================================================--
 
 #go to the file where I comply all the info for the programme
-db_inp <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP_database/PIL/Output/"
+db_inp <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP_database/PIL/Output/"  ##unsure what this is?
 list.files(db_inp)
 
 db <- read.table(paste(db_inp,"PIL_agg2122.csv",sep=""),sep=",",header=T, stringsAsFactors = F)

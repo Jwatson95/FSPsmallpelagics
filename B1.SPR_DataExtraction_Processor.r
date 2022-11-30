@@ -86,6 +86,8 @@ for(i in 1:length(mydata2)){
   llista[[i]] <- mydata2[[i]][rowSums(is.na(mydata2[[i]][,0:ncol(mydata2[[i]])]))<ncol(mydata2[[i]]),1:17]
 } 
 
+install.packages("janitor")
+library("janitor")
 #Select only the cells you are interested on
 llista <- lapply(llista,function(x)return(x[3:48,-2]))  # counts the count of odd numbers in the argument
 #format it
@@ -176,13 +178,14 @@ dim(df)
 
 # format it
 head(df);str(df)
+df$date<- dmy(df$date)
 df$month <- month(df$date)
 df$year <- year(df$date)
 df$source <- "processor"
 df$processor <- "COOMBEFISHERIES"
 df$totalcatch_kg <- ""
 
-head(df)
+head(df) #not working?
 names(df) <- c("date","vessel","species","totalcatch_kg","length_cm","weight_g","processor","sampleID","month","year","source","processor","samplewt_g")
 
 df <- df[,c("date","vessel","totalcatch_kg","length_cm","weight_g","samplewt_g","sampleID","month","year","source","species","processor")]
@@ -195,7 +198,7 @@ df <- df[,c("date","vessel","totalcatch_kg","length_cm","weight_g","samplewt_g",
 # 2. SPR FALFISH ----
 # ===================================================--
 
-inp_dir_Falfish <- file.path(getwd(),"Data/Processors/SPR/Falfish/")
+inp_dir_Falfish <- file.path(getwd(),"Data/Processors/SPR/Falfish/") #no falfish in this data
 list.files(inp_dir_Falfish)
 
 # read excel files
@@ -303,7 +306,7 @@ FALFISH$length_cm <- FALFISH$length_cm/10
 # 3. SPR INTERFISH ----
 # ===================================================--
 
-inp_dir_inter <- file.path(getwd(),"Data/Processors/SPR/Interfish/")
+inp_dir_inter <- file.path(getwd(),"Data/Processors/SPR/Interfish/") #no interfish in this year?
 list.files(inp_dir_inter)
 
 # read excel files

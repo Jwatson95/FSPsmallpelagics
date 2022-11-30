@@ -3,7 +3,8 @@
 # 12-03-2021; last updated 09/09/2022
 #---------------------------------------------------------------------## 
 
-setwd <-"C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP2122/"
+#setwd <-"C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP2122/"
+setwd("C:/Users/JW30/OneDrive - CEFAS/Documents/MD007B_2122/Working_area")
 # set input, output directories
 inp_dir <- file.path(getwd(), "Data/Processors/PIL/")
 plot_dir <- file.path(getwd(), "Data/plots/PIL/")
@@ -53,7 +54,7 @@ names(pilproc_aggrL) <- c("species","date","division","length_cm","N","samplewt_
 list.files(out_dir)
 
 #read latest file logbook
-lbfishers <- read.csv(paste(out_dir,"/PIL_LBfishers_2122(3).csv",sep=""),sep=",",header=T,stringsAsFactors=F)# vs(3) has an error corrected
+lbfishers <- read.csv(paste(out_dir,"/PIL_LBfishers_2122(2).csv",sep=""),sep=",",header=T,stringsAsFactors=F)# vs(3) has an error corrected
 dim(lbfishers)
 
 #read latest file length log
