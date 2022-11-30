@@ -9,7 +9,7 @@
 
 rm(list=ls())
 # set input, output directories
-inp_dir <- file.path(getwd(), "Data/Processors/ANE/")
+inp_dir <- file.path(getwd(), "Data/Processors/ANE/")  #dont have ANE data
 plot_dir <- file.path(getwd(), "Data/plots/ANE")
 out_dir <- file.path(getwd(), "Data/Output/final/")
 list.files(inp_dir,recursive=TRUE) # recursive TRUE to see inside the different folders

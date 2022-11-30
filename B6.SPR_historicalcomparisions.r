@@ -4,7 +4,7 @@
 #---------------------------------------------------------------------## 
 
 # set input, output directories
-inp_dir <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP_database/SPR/Output/"
+inp_dir <- "C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP_database/SPR/Output/" ##unsure what this file path points at? 
 list.files(inp_dir)
 plot_dir <- file.path(getwd(), "Data/plots/SPR/Historic_comp/")
 

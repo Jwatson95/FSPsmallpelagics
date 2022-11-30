@@ -39,10 +39,10 @@ species <- "SPR"
 # 0. Load files----
 # ===================================================--
 
-pilfish <- read.table(paste(out_dir,"/SPR_LBelectronic.csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F)
+pilfish <- read.table(paste(out_dir,"/SPR_LBelectronic.csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F) ##missing data from file? 
 head(pilfish);dim(pilfish)
 
-piltl <- read.table(paste(out_dir,"/PIL_TLfishers_2021.csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F)
+piltl <- read.table(paste(out_dir,"/PIL_TLfishers_2021.csv",sep=''),sep=",",header=TRUE,stringsAsFactors = F) ##missing data from file 
 head(piltl);dim(piltl)
 
 

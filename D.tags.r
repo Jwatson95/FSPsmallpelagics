@@ -10,7 +10,7 @@ setwd("C:/Users/SRC01/OneDrive - CEFAS/SC/Rscripts/FSP2122/Data/")
 # ===================================================--
 rm(list=ls())
 # set input, output directories
-inp_dir <- file.path(getwd(), "tags/")
+inp_dir <- file.path(getwd(), "tags/") #dont have these files 
 plot_dir <- file.path(getwd(), "plots/tags/")
 out_dir <- file.path(getwd(), "Output/")
 list.files(inp_dir,recursive=TRUE) # recursive TRUE to see inside the different folders
